@@ -1,0 +1,2 @@
+# apromise
+vanilla Promise implementation 
