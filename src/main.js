@@ -10,6 +10,7 @@ module.exports = {
             promise: {
                 then: function (success, fail) {
                     resolvedCallback = success;
+                    rejectedCallback = fail;
 
                     if (actionCompleted  && data) {
                         resolvedCallback.call(null, data);
@@ -34,7 +35,7 @@ module.exports = {
                 actionCompleted = true;
 
                 if (rejectedCallback) {
-                    rejectedCallback.call(null, d);
+                    rejectedCallback.call(null, error);
                 }
             }
         }
